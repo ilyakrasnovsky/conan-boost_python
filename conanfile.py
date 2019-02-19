@@ -15,8 +15,8 @@ class BoostPythonConan(ConanFile):
     lib_short_names = ["python"]
     is_header_only = False
     
-    options = {"shared": [True, False], "python": "ANY", "withpython" : [True, False]}
-    default_options = "shared=False", "python=python", "withpython=True"
+    options = {"shared": [True, False], "python": "ANY"}
+    default_options = "shared=False", "python=python"
 
     source_only_deps = ["graph", "multi_index", "parameter", 
     "property_map", "serialization", "unordered"]
@@ -58,10 +58,7 @@ class BoostPythonConan(ConanFile):
         return self.settings.arch == "x86" and tools.detected_architecture() == "x86_64"
 
     def system_requirements(self):
-        if self.settings.os == "Linux" and self.options['withpython']:
-            arch = ":i386" if self._is_amd64_to_i386() else ""
-            package_tool = tools.SystemPackageTool()
-            package_tool.install("python-dev%s" % arch)
+        pass
     
     @property
     def python_exec(self):
