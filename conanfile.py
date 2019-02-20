@@ -19,6 +19,7 @@ class BoostPythonConan(ConanFile):
     "property_map", "serialization", "unordered"]
     
     requires = (
+        "python_dev_config/0.2@bincrafters/stable",
         "boost_package_tools/1.66.0@bincrafters/stable",
         "boost_bind/1.66.0@bincrafters/stable",
         "boost_config/1.66.0@bincrafters/stable",
