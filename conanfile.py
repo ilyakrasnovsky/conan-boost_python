@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from conans import ConanFile, tools
-from io import StringIO
-import os
-
 
 class BoostPythonConan(ConanFile):
     name = "boost_python"
@@ -54,8 +51,9 @@ class BoostPythonConan(ConanFile):
             self.info.requires[dep_name].full_version_mode()
     
     def source_additional(self):
-        if self.options.python_version != self.deps_user_info['python_dev_config'].python_version:
-            raise Exception("Python version does not match with configured python dev, expected %s but got %s." % (self.options.python_version, self.deps_user_info['python_dev_config'].python_version))
+        # if self.options.python_version != self.deps_user_info['python_dev_config'].python_version:
+            # raise Exception("Python version does not match with configured python dev, expected %s but got %s." % (self.options.python_version, self.deps_user_info['python_dev_config'].python_version))
+        pass
 
     # BEGIN
 
